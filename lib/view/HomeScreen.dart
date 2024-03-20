@@ -163,10 +163,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         return const Center(child: Text("Erro ao carregar dados", style: TextStyle(color: Colors.redAccent, fontSize: 15.0),textAlign: TextAlign.center,),);
                       } else {
                         var obj = snapshot.data?["data"];
-                        int suspeitos = obj["cases"] ?? 0 as int;
+                        int suspeitos = obj["cases"] ?? 0;
                         int casos = obj["confirmed"] as int;
                         int mortes = obj["deaths"] as int;
-                        int recuperados = obj["recovered"] ?? 0 as int;
+                        int recuperados = obj["recovered"] ?? 0;
                         String dataAtualizacao = obj["updated_at"];
                         data = DateTime.parse(dataAtualizacao);
                         return StatsGridComponent(casos: casos, mortes: mortes, recuperados: recuperados, suspeitos: suspeitos,);
